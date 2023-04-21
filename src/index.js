@@ -32,7 +32,7 @@ function preload () {
   this.load.image("player","assets/Ship.png");
   this.load.image("bullet","assets/Bullet.png");
   this.load.image("alien", "assets/Enemy.png");
-}
+} 
 
 function create () {
   this.add.image(300, 300, "space");
@@ -42,9 +42,8 @@ function create () {
  
  
   aliens = this.physics.add.group({
-    key: 'alien',
-    repeat: 5, 
-    setXY: { x: 50, y: 250, stepX: 100, } 
+    key: 'alien', 
+    setXY: { x: config.width/2, y: 250, stepX: 100, } 
   });
 
   bullets = this.physics.add.group({
@@ -78,7 +77,7 @@ function create () {
       bulletTimeCount = 0;
     }  
   }
-  
+
   if (this.keys.A.isDown){
     movementL();
   }   
